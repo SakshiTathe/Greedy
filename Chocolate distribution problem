@@ -1,0 +1,35 @@
+
+class Innerbasic {
+    public void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    public void travel(int[] arr) {
+        for (int ele : arr) {
+            System.out.print(ele + ",");
+        }
+        System.out.println(" ");
+    }
+} 
+public class basic {
+    public static void main(String[] args) {
+        int packet[]={7, 3, 2, 4, 9, 12, 56},child;
+        Innerbasic obj=new Innerbasic();
+        child=3;
+        for (int i = 0; i < child; i++) {
+            int mini=packet[i];
+            int index=i;
+            for (int j = i+1; j <packet.length; j++) {
+                if (packet[j] <mini) {
+                    mini=packet[j];
+                    index=j;
+                }
+            }
+            if (index != i) {
+                obj.swap(packet, i, index);
+            }
+            System.out.println(packet[i]);
+        }
+    }
+}
